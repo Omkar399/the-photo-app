@@ -45,12 +45,10 @@ uv.lock
 .env.local
 .env.*.local
 
-# Data & Models (excluded from git)
-data/images/
-data/thumbs/
-data/faiss/
-models/
-db/
+# Data & Models (excluded from git - root level only)
+/data/
+/models/
+/db/
 
 # Database
 *.db
