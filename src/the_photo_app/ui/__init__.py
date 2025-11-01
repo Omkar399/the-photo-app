@@ -1,1 +1,1 @@
-"""Streamlit UI for AFace photo search."""
+"""Streamlit UI for The Photo App photo search."""

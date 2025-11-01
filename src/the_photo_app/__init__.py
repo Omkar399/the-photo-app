@@ -1,4 +1,4 @@
-"""AFace - Local Ultra-Fast Photo Search with Semantic & Face Sorting."""
+"""The Photo App - Local Ultra-Fast Photo Search with Semantic & Face Sorting."""
 
 __version__ = "0.1.0"
 __author__ = "Your Name"

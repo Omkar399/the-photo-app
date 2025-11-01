@@ -1,4 +1,4 @@
-"""CLI entry point for AFace."""
+"""CLI entry point for The Photo App."""
 
 import sys
 import click
@@ -9,7 +9,7 @@ from the_photo_app.indexing.indexer import PhotoIndexer
 
 @click.group()
 def cli():
-    """AFace - Local ultra-fast photo search."""
+    """The Photo App - Local ultra-fast photo search."""
     pass
 
 
@@ -34,7 +34,7 @@ def cli():
 )
 def index(image_dir: str, batch_size: int, skip_existing: bool):
     """Index photos for semantic search."""
-    click.echo("🖼️  AFace Indexer")
+    click.echo("🖼️  The Photo App Indexer")
     click.echo(f"Image directory: {image_dir}")
     click.echo(f"Batch size: {batch_size}")
 
@@ -62,7 +62,7 @@ def index(image_dir: str, batch_size: int, skip_existing: bool):
 )
 def serve(host: str, port: int):
     """Start FastAPI search server."""
-    click.echo("🚀 Starting AFace server...")
+    click.echo("🚀 Starting The Photo App server...")
     click.echo(f"Listening on {host}:{port}")
 
     from the_photo_app.api.server import main
@@ -79,7 +79,7 @@ def serve(host: str, port: int):
 )
 def ui(port: int):
     """Start Streamlit UI."""
-    click.echo("🎨 Starting AFace UI...")
+    click.echo("🎨 Starting The Photo App UI...")
     click.echo(f"Launching Streamlit on port {port}")
 
     import subprocess

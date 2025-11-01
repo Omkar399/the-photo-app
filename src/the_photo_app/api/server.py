@@ -1,4 +1,4 @@
-"""FastAPI server for AFace photo search."""
+"""FastAPI server for The Photo App photo search."""
 
 import io
 from typing import Optional, List
@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 # Create FastAPI app
 app = FastAPI(
-    title="AFace Photo Search",
+    title="The Photo App - Photo Search",
     description="Local semantic search + face-aware photo indexing",
     version="0.1.0",
 )

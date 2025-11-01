@@ -1,1 +1,1 @@
-"""FastAPI server for AFace search."""
+"""FastAPI server for The Photo App search."""

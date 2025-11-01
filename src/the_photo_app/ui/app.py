@@ -1,4 +1,4 @@
-"""Streamlit UI for AFace photo search."""
+"""Streamlit UI for The Photo App photo search."""
 
 import streamlit as st
 import json
@@ -12,7 +12,7 @@ from the_photo_app.query.search import search_engine
 
 # Set page config
 st.set_page_config(
-    page_title="🖼️ AFace Photo Search",
+    page_title="🖼️ The Photo App",
     page_icon="🖼️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -32,7 +32,7 @@ st.markdown(
 
 def render_header():
     """Render header."""
-    st.title("🖼️ AFace - Local Photo Search")
+    st.title("🖼️ The Photo App - Local Photo Search")
     st.markdown(
         "Semantic search + face-aware filtering for your local photo library. "
         "**100% private, 100% local.**"
@@ -285,7 +285,7 @@ def render_sidebar():
         st.subheader("ℹ️ Information")
         st.markdown(
             """
-        **AFace** is a local-first photo search system featuring:
+        **The Photo App** is a local-first photo search system featuring:
         
         - 🎯 Semantic search (text → image)
         - 👤 Face detection & recognition
