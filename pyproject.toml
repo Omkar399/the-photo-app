@@ -1,0 +1,73 @@
+[project]
+name = "the-photo-app"
+version = "0.1.0"
+description = "Local ultra-fast photo search with semantic search and face sorting"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+
+dependencies = [
+    # Core data processing
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "opencv-python>=4.8.0",
+    
+    # Embeddings & Models
+    "faiss-cpu>=1.7.4",
+    "insightface>=0.7.3",
+    "onnxruntime>=1.16.0",
+    "timm>=0.9.0",
+    "open-clip-torch>=2.20.0",
+    "transformers>=4.30.0",
+    
+    # Database & Storage
+    "sqlite-utils>=3.35.0",
+    
+    # Utils
+    "xxhash>=3.4.0",
+    "python-dotenv>=1.0.0",
+    
+    # Web Server
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "python-multipart>=0.0.6",
+    
+    # UI
+    "streamlit>=1.28.0",
+    
+    # Development
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+# uv doesn't use python-version in this location
+# Configuration is handled at root level
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "W", "I", "N", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
