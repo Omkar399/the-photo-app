@@ -96,7 +96,7 @@ brew install uv
 
 ```bash
 git clone <repo>
-cd aface
+cd the-photo-app
 
 # Create virtual environment and install dependencies
 uv sync
