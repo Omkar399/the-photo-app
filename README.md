@@ -33,39 +33,38 @@ A local-first photo search system with semantic search (text→image) and face-a
 the-photo-app/
 ├── pyproject.toml                 # Project config with uv
 ├── README.md
-├── .env.example
-├── src/
-│   └── the-photo-app/
+├── .env
+├── the_photo_app/                 # Main package
+│   ├── __init__.py
+│   ├── __main__.py                # CLI entry point
+│   ├── config.py                  # Settings & environment
+│   ├── db/
+│   │   ├── __init__.py
+│   │   └── schema.py              # SQLite schema & migrations
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── embeddings.py          # SigLIP wrapper
+│   │   ├── face.py                # SCRFD + ArcFace wrapper
+│   │   └── model_manager.py       # Model loading & caching
+│   ├── indexing/
+│   │   ├── __init__.py
+│   │   ├── indexer.py             # Main indexing pipeline
+│   │   ├── faiss_manager.py       # FAISS index management
+│   │   └── thumbnail_gen.py       # Thumbnail generation
+│   ├── query/
+│   │   ├── __init__.py
+│   │   └── search.py              # Search logic
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── hash.py                # Image hashing & dedup
+│   │   ├── image.py               # Image I/O & preprocessing
+│   │   └── normalization.py       # Vector L2-norm utilities
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── server.py              # FastAPI server
+│   └── ui/
 │       ├── __init__.py
-│       ├── config.py              # Settings & environment
-│       ├── db/
-│       │   ├── __init__.py
-│       │   └── schema.py           # SQLite schema & migrations
-│       ├── models/
-│       │   ├── __init__.py
-│       │   ├── embeddings.py       # SigLIP wrapper
-│       │   ├── face.py             # SCRFD + ArcFace wrapper
-│       │   └── model_manager.py    # Model loading & caching
-│       ├── indexing/
-│       │   ├── __init__.py
-│       │   ├── indexer.py          # Main indexing pipeline
-│       │   ├── faiss_manager.py    # FAISS index management
-│       │   └── thumbnail_gen.py    # Thumbnail generation
-│       ├── query/
-│       │   ├── __init__.py
-│       │   ├── search.py           # Search logic
-│       │   └── rerank.py           # Optional reranking
-│       ├── utils/
-│       │   ├── __init__.py
-│       │   ├── hash.py             # Image hashing & dedup
-│       │   ├── image.py            # Image I/O & preprocessing
-│       │   └── normalization.py    # Vector L2-norm utilities
-│       ├── api/
-│       │   ├── __init__.py
-│       │   └── server.py           # FastAPI server
-│       └── ui/
-│           ├── __init__.py
-│           └── app.py              # Streamlit UI
+│       └── app.py                 # Streamlit UI
 ├── data/
 │   ├── images/                    # Original images
 │   ├── thumbs/                    # Generated thumbnails
@@ -182,7 +181,7 @@ Open two terminals:
 uv run python -m the_photo_app serve
 
 # Terminal 2: Start Streamlit UI
-uv run streamlit run src/the-photo-app/ui/app.py
+uv run streamlit run the_photo_app/ui/app.py
 ```
 
 Then open http://localhost:8501 in your browser!
@@ -497,7 +496,7 @@ uv run python -m the_photo_app serve
 uv run python -m the_photo_app ui
 
 # Or run Streamlit directly
-uv run streamlit run src/the-photo-app/ui/app.py
+uv run streamlit run the_photo_app/ui/app.py
 ```
 
 ## Architecture Notes

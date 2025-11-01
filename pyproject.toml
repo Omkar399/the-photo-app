@@ -53,6 +53,10 @@ dev = [
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["the_photo_app*"]
+
 [tool.uv]
 # uv doesn't use python-version in this location
 # Configuration is handled at root level
